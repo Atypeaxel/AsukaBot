@@ -1,0 +1,33 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+    id 'application'
+}
+
+group = 'itz.peaxel'
+version = '1.0'
+
+repositories {
+    mavenCentral() // for transitive dependencies
+    maven {
+        name 'm2-dv8tion'
+        url 'https://m2.dv8tion.net/releases'
+    }
+}
+
+dependencies {
+    implementation("net.dv8tion:JDA:+")
+    implementation("org.ini4j:ini4j:0.5.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:+")
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = '11'
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = '11'
+}
+
+application {
+    mainClassName = 'Asuka'
+}
