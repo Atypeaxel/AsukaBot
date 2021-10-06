@@ -1,5 +1,5 @@
 # AsukaBot - A simple Kotlin Discord Bot
-___
+
 The Discord bot of the serber, a private Discord server. Asuka is a Discord But running on the JDA API but made in kotlin. Asuka support ini configuration file, local modules and slash commands.
 
 ### Configuration
