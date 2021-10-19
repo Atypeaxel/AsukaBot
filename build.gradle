@@ -1,6 +1,6 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
     id 'application'
+    id 'org.jetbrains.kotlin.jvm' version '1.6.0-RC'
 }
 
 group = 'itz.peaxel'
@@ -18,16 +18,18 @@ dependencies {
     implementation("net.dv8tion:JDA:+")
     implementation("org.ini4j:ini4j:0.5.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:+")
+    implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }
 
 compileKotlin {
-    kotlinOptions.jvmTarget = '11'
-}
-
-compileTestKotlin {
-    kotlinOptions.jvmTarget = '11'
+    kotlinOptions.jvmTarget = "1.8"
 }
 
 application {
-    mainClassName = 'Asuka'
+    mainClassName = 'itz.peaxel.asuka.Asuka'
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }

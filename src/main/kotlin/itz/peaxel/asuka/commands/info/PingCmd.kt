@@ -1,25 +1,24 @@
-package commands
+package itz.peaxel.asuka.commands.info
 
-import modules.CommandOption
-import modules.CommandType
-import modules.ICommand
+
+import itz.peaxel.asuka.core.managers.CommandManager
 import net.dv8tion.jda.api.EmbedBuilder
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent
 import java.awt.Color
 
-class PingCmd : ICommand {
+class PingCmd : CommandManager.ICommand {
 
-    override var name: String
+    override val name: String
         get() = "ping"
-        set(value) {}
 
-    override var description: String
+    override val description: String
         get() = "Ping the discord's gateway servers."
-        set(value) {}
 
-    override var type: CommandType
-        get() = CommandType.INFO
-        set(value) {}
+    override val type: CommandManager.CommandType
+        get() = CommandManager.CommandType.INFO
+
+    override val sigma: Boolean
+        get() = false
 
     override fun execution(event: SlashCommandEvent) {
         val builder = EmbedBuilder().setTitle(":ping_pong: **Pong !**")
@@ -28,7 +27,7 @@ class PingCmd : ICommand {
         event.replyEmbeds(builder.build()).queue()
     }
 
-    override fun options(): HashMap<CommandOption, Boolean> {
-        return HashMap<CommandOption, Boolean>()
+    override fun options(): HashMap<CommandManager.CommandOption, Boolean> {
+        return HashMap<CommandManager.CommandOption, Boolean>()
     }
 }

@@ -1,6 +1,6 @@
 # AsukaBot - A simple Kotlin Discord Bot
 
-The Discord bot of the serber, a private Discord server. Asuka is a Discord But running on the JDA API but made in kotlin. Asuka support ini configuration file, local modules and slash commands.
+The Discord bot of the serber, a private Discord server. Asuka is a Discord But running on the JDA API but made in kotlin. Asuka support ini configuration file, local core.modules and slash commands.
 
 ### Configuration
 ___
@@ -8,6 +8,7 @@ As you see, Asuka use a INI configuration file with the api Init4j, and you conf
 ```ini
 [configuration]
 token = Insert your token here
+sigma = true / false
 owner_ids = Owner ids are here separated by a simple space (like this " ")
 motd = A useless status for the bot
 ```
@@ -17,7 +18,7 @@ Also, there is some arguments used by Asuka to run with different configurations
 
 Arguments | Definition
 --- | ---
---sigma | Launch the bot in sigma mode (aka debug mode). This mode disable non debug events, such as modules and some commands. Also activate debug console and authorize use of debug commands.
+--sigma | Launch the bot in sigma mode (aka debug mode). This mode disable non debug events, such as core.modules and some commands. Also activate debug console and authorize use of debug commands.
 --no-events | Disable all non system events, such as almost all ListenerAdapter() events.
 --invisible | Launch the bot in invisible mode. Can be used with `--sigma` for incognito debugging. 
 
@@ -28,7 +29,7 @@ The module manager is a simple module class with a module handler and interface.
 A correct module with no extra functions should look like this : 
 
 ```kotlin
-package modules
+package core.modules
 
 import managers.IModule
 
@@ -51,7 +52,7 @@ execution | The method used as main module method. You are free to create more m
 
 ### The Command Module
 ___
-The command module is the main command class handler and interface. It also support the use for slash commands, but only for one guild (You can change this guild ID, just by replacing the hardcoded one in the `modules.CommandModule.tk` class).
+The command module is the main command class handler and interface. It also support the use for slash commands, but only for one guild (You can change this guild ID, just by replacing the hardcoded one in the `core.modules.CommandModule.tk` class).
 
 In order to make a command, just like Modules, you have to create a class implemented by the `ICommand` interface.
 
@@ -60,9 +61,9 @@ A correct command class should look like this :
 ```kotlin
 package commands
 
-import modules.CommandOption
-import modules.CommandType
-import modules.ICommand
+import core.modules.CommandOption
+import core.modules.CommandType
+import core.modules.ICommand
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent
 
 class TestCmd : ICommand {
