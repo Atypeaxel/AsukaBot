@@ -1,6 +1,8 @@
 package itz.peaxel.asuka.commands.info
 
-import itz.peaxel.asuka.core.managers.CommandManager
+import itz.peaxel.asuka.core.managers.CommandOption
+import itz.peaxel.asuka.core.managers.CommandType
+import itz.peaxel.asuka.core.managers.ICommand
 import net.dv8tion.jda.api.EmbedBuilder
 import net.dv8tion.jda.api.MessageBuilder
 import net.dv8tion.jda.api.entities.Member
@@ -14,7 +16,7 @@ import java.time.Instant
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 
-class ProfileCmd : CommandManager.ICommand {
+class ProfileCmd : ICommand {
     override fun execution(event: SlashCommandEvent) {
 
         val user: User =
@@ -57,15 +59,15 @@ class ProfileCmd : CommandManager.ICommand {
     override val description: String
         get() = "Show your profile or guild user profile"
 
-    override val type: CommandManager.CommandType
-        get() = CommandManager.CommandType.INFO
+    override val type: CommandType
+        get() = CommandType.INFO
 
     override val sigma: Boolean
         get() = false
 
-    override fun options(): HashMap<CommandManager.CommandOption, Boolean> {
-        val co = CommandManager.CommandOption(OptionType.USER, "user", "Show a guild user profile")
-        val hm = HashMap<CommandManager.CommandOption, Boolean>()
+    override fun options(): HashMap<CommandOption, Boolean> {
+        val co = CommandOption(OptionType.USER, "user", "Show a guild user profile")
+        val hm = HashMap<CommandOption, Boolean>()
         hm[co] = false
         return hm
     }

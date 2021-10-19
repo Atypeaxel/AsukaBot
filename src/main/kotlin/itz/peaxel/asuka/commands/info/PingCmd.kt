@@ -1,12 +1,14 @@
 package itz.peaxel.asuka.commands.info
 
 
-import itz.peaxel.asuka.core.managers.CommandManager
+import itz.peaxel.asuka.core.managers.CommandOption
+import itz.peaxel.asuka.core.managers.CommandType
+import itz.peaxel.asuka.core.managers.ICommand
 import net.dv8tion.jda.api.EmbedBuilder
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent
 import java.awt.Color
 
-class PingCmd : CommandManager.ICommand {
+class PingCmd : ICommand {
 
     override val name: String
         get() = "ping"
@@ -14,8 +16,8 @@ class PingCmd : CommandManager.ICommand {
     override val description: String
         get() = "Ping the discord's gateway servers."
 
-    override val type: CommandManager.CommandType
-        get() = CommandManager.CommandType.INFO
+    override val type: CommandType
+        get() = CommandType.INFO
 
     override val sigma: Boolean
         get() = false
@@ -27,7 +29,7 @@ class PingCmd : CommandManager.ICommand {
         event.replyEmbeds(builder.build()).queue()
     }
 
-    override fun options(): HashMap<CommandManager.CommandOption, Boolean> {
-        return HashMap<CommandManager.CommandOption, Boolean>()
+    override fun options(): HashMap<CommandOption, Boolean> {
+        return HashMap<CommandOption, Boolean>()
     }
 }
