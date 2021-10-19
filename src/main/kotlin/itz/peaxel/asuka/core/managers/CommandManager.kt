@@ -1,5 +1,6 @@
 package itz.peaxel.asuka.core.managers
 
+import itz.peaxel.asuka.commands.info.BotinfoCmd
 import itz.peaxel.asuka.commands.info.HelpCmd
 import itz.peaxel.asuka.commands.info.PingCmd
 import itz.peaxel.asuka.commands.info.ProfileCmd
@@ -20,6 +21,7 @@ object CommandManager {
 
         //INFO CMDs
         registerCommand(HelpCmd())
+        registerCommand(BotinfoCmd())
         registerCommand(PingCmd())
         registerCommand(ProfileCmd())
     }

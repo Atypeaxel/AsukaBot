@@ -20,7 +20,6 @@ class CommandManagerListener : ListenerAdapter() {
     private val logger = ALogger(this::class.java.simpleName)
 
     override fun onSlashCommand(event: SlashCommandEvent) {
-        logger.debug(event.name)
 
         for(commands in CommandManager.getCommands) logger.debug(commands.key)
 

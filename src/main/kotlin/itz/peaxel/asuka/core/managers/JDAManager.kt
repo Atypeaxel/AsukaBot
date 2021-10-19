@@ -11,6 +11,11 @@ import net.dv8tion.jda.api.requests.GatewayIntent
 import net.dv8tion.jda.api.utils.cache.CacheFlag
 import java.util.*
 
+/**
+ * The JDA Manager Object Class.
+ * @see JDA
+ * @see JDABuilder
+ */
 object JDAManager {
 
     lateinit var instance: JDA

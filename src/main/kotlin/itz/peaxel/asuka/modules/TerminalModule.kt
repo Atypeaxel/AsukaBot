@@ -36,6 +36,7 @@ class TerminalModule: IModule {
 
     override val name: String
         get() = "Terminal"
+
     override val sigma: Boolean
-        get() = true
+        get() = false
 }
