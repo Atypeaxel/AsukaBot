@@ -13,9 +13,6 @@ object Asuka {
     var isSigma = false
     var isInvisible = false
 
-    val getInvisibleStatus: Boolean
-    get() = isInvisible
-
     private fun start(args: Array<String>) {
 
         for (arg in args) {
@@ -23,7 +20,7 @@ object Asuka {
                 "-sigma" -> {
                     isSigma = true
                     logger.warning("Sigma is enabled ! Asuka will not work as usual, and bugs may appear.")
-                    logger.debug("All sigma functionalities are unlocked. Do at your own risk.")
+                    logger.debug("All sigma functionalities are unlocked. Continue at your own risk.")
                 }
                 "-invisible" -> {
                     isInvisible = true

@@ -19,7 +19,7 @@ object JDAManager {
         instance = JDABuilder.create(token, EnumSet.allOf(GatewayIntent::class.java))
             .enableCache(CacheFlag.ONLINE_STATUS, CacheFlag.MEMBER_OVERRIDES, CacheFlag.ACTIVITY)
             .setActivity(Activity.streaming(motd, "https://twitch.tv/itzpeaxel"))
-            .setStatus(OnlineStatus.INVISIBLE)
+            .setStatus(OnlineStatus.DO_NOT_DISTURB)
             .addEventListeners(CommandManagerListener())
             .addEventListeners(LoggerListener())
             .addEventListeners(ReadyListener())

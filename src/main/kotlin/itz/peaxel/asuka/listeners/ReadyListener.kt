@@ -1,10 +1,16 @@
 package itz.peaxel.asuka.listeners
 
+import itz.peaxel.asuka.Asuka
 import itz.peaxel.asuka.utils.ACache
 import itz.peaxel.asuka.utils.ALogger
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import net.dv8tion.jda.api.OnlineStatus
+import net.dv8tion.jda.api.entities.Activity
 import net.dv8tion.jda.api.events.ReadyEvent
 import net.dv8tion.jda.api.hooks.ListenerAdapter
 import java.lang.reflect.Member
+import java.util.*
 import kotlin.math.log
 
 class ReadyListener : ListenerAdapter() {
@@ -22,6 +28,5 @@ class ReadyListener : ListenerAdapter() {
 
             ACache.memberCache.add(member)
         }
-        logger.debug("Loaded members : ${ACache.memberCache.size}")
     }
 }

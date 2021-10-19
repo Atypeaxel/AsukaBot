@@ -13,11 +13,11 @@ class AConfiguration {
     private val logger = ALogger(this::class.java.simpleName)
 
     private lateinit var token: String
-    private lateinit var motd: String
+    lateinit var motd: String
     lateinit var ownerIds: List<String>
 
     val version: String
-        get() = "0.2.0 ALPHA-2"
+        get() = "0.2.0 BETA-1"
 
     fun init(){
         val configFile = File("config.ini")

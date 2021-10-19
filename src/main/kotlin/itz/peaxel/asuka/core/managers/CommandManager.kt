@@ -1,5 +1,6 @@
 package itz.peaxel.asuka.core.managers
 
+import itz.peaxel.asuka.commands.info.HelpCmd
 import itz.peaxel.asuka.commands.info.PingCmd
 import itz.peaxel.asuka.commands.info.ProfileCmd
 import itz.peaxel.asuka.commands.owner.ShutdownCmd
@@ -18,6 +19,7 @@ object CommandManager {
         registerCommand(ShutdownCmd())
 
         //INFO CMDs
+        registerCommand(HelpCmd())
         registerCommand(PingCmd())
         registerCommand(ProfileCmd())
     }

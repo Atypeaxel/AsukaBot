@@ -45,7 +45,6 @@ class ProfileCmd : ICommand {
             .addField("\uD83D\uDE80 Account Created", "`${dtf.format(member.user.timeCreated)}`", true)
             .addField("\uD83D\uDCC8 Last server join", "`${dtf.format(member.timeJoined)}`", true)
             .addField("\uD83D\uDCDA Roles", sb.toString(), false)
-            .setFooter(TimeUtil.getDateTimeString(OffsetDateTime.now()))
             .setColor(Color.CYAN)
             .setTimestamp(Instant.now())
 
