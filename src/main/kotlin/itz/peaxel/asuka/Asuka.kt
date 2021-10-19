@@ -10,11 +10,8 @@ object Asuka {
 
     private val logger = ALogger(this::class.java.simpleName)
 
-    private var isSigma = false
-    private var isInvisible = false
-
-    val getSigma: Boolean
-       get() = isSigma
+    var isSigma = false
+    var isInvisible = false
 
     val getInvisibleStatus: Boolean
     get() = isInvisible
@@ -39,6 +36,9 @@ object Asuka {
 
         logger.system("Starting config loading...")
         config.load()
+        println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+        logger.system("Asuka v.${config.version} is ready to use ! type 'help' for fore infos !")
+        println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
     }
 
     fun stop() {

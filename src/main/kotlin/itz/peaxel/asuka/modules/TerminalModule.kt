@@ -7,7 +7,7 @@ import net.dv8tion.jda.api.JDA
 
 class TerminalModule: IModule {
 
-    private val logger = ALogger(this::class.java.name)
+    private val logger = ALogger(this::class.java.simpleName)
 
     override fun execution(jda: JDA) {
 
@@ -27,7 +27,7 @@ class TerminalModule: IModule {
 
                 "version" -> {
                     logger.terminal("Asuka is running on version ${Asuka.config.version} !")
-                    logger.terminal("Sigma status (beta with limited features) is ${Asuka.getSigma}")
+                    logger.terminal("Sigma status (beta with limited features) is ${Asuka.isSigma}")
                     logger.debug("Sigma test. If this text is visible, everything is working fine.")
                 }
             }

@@ -17,7 +17,7 @@ class AConfiguration {
     lateinit var ownerIds: List<String>
 
     val version: String
-        get() = "0.2.0 ALPHA-1"
+        get() = "0.2.0 ALPHA-2"
 
     fun init(){
         val configFile = File("config.ini")
@@ -32,6 +32,7 @@ class AConfiguration {
             Asuka.stop()
         }
 
+        logger.system("Loading needed variables...")
         val ini = Ini(configFile)
 
         token = ini.get("configuration", "token")
@@ -40,12 +41,17 @@ class AConfiguration {
     }
 
     fun load(){
+
+        logger.system("Loading JDA...")
         JDAManager.startJda(token, motd)
+        logger.system("Loading CommandManager...")
         CommandManager.loadCommands()
+        logger.system("Loading ModuleManager...")
         ModuleManager.startModules()
     }
 
     fun save(){
+        logger.system("Saving configuration...")
         val configFile = File("config.ini")
     }
 }

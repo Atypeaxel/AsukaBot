@@ -29,12 +29,12 @@ class CommandManagerListener : ListenerAdapter() {
 
         val command = CommandManager.getCommands[event.name]
 
-        if(command!!.sigma && !Asuka.getSigma) return
-        if(Asuka.config.ownerIds.contains(event.member!!.id))
+
+        if(command!!.sigma && Asuka.isSigma && !Asuka.config.ownerIds.contains(event.member!!.id)) return
 
         logger.log("Command [${command.name}] used by ${event.member!!.user.asTag}")
 
-        GlobalScope.launch {
+        val startCommand = GlobalScope.launch {
             try{
                 command.execution(event)
             } catch (e: Exception){

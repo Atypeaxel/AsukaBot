@@ -93,7 +93,7 @@ class ALogger(cn: String){
         }
 
         fun debug(msg: String) {
-                if(!Asuka.getSigma) return
+                if(!Asuka.isSigma) return
                 println("$PURPLE_BOLD_BRIGHT[DEBUG] [$className]$PURPLE $msg")
         }
 

@@ -1,6 +1,8 @@
 package itz.peaxel.asuka.core.managers
 
 import itz.peaxel.asuka.listeners.CommandManagerListener
+import itz.peaxel.asuka.listeners.LoggerListener
+import itz.peaxel.asuka.listeners.ReadyListener
 import net.dv8tion.jda.api.JDA
 import net.dv8tion.jda.api.JDABuilder
 import net.dv8tion.jda.api.OnlineStatus
@@ -19,6 +21,8 @@ object JDAManager {
             .setActivity(Activity.streaming(motd, "https://twitch.tv/itzpeaxel"))
             .setStatus(OnlineStatus.INVISIBLE)
             .addEventListeners(CommandManagerListener())
+            .addEventListeners(LoggerListener())
+            .addEventListeners(ReadyListener())
             .build().awaitReady()
     }
 }
