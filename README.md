@@ -17,9 +17,9 @@ Also, there is some arguments used by Asuka to run with different configurations
 
 Arguments | Definition
 --- | ---
---sigma | Launch the bot in sigma mode (aka debug mode). This mode disable non debug events, such as modules and some commands. Also activate debug console and authorize use of debug commands.
+--debug | Launch the bot in debug mode. This mode disable non debug events, such as modules and some commands. Also activate debug console and authorize use of debug commands.
 --no-events | Disable all non system events, such as almost all ListenerAdapter() events.
---invisible | Launch the bot in invisible mode. Can be used with `--sigma` for incognito debugging. 
+--invisible | Launch the bot in invisible mode. Can be used with `--debug` for incognito debugging. 
 
 ### The Module Manager
 ___

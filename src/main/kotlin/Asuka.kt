@@ -34,11 +34,11 @@ class Asuka : ListenerAdapter() {
         /**
          * This is a non-exhaustive list of useful program arguments used by Asuka.
          *
-         * --sigma            Launch the bot un debug mode (allow debug commands, enable debug console and disable non debug events)
+         * --debug            Launch the bot un debug mode (allow debug commands, enable debug console and disable non debug events)
          * --no-events        Disable events
          * --invisible        Launch the bot in invisible.
          */
-        private var isSigma = false
+        private var isDebug = false
         private var isNoEvents = false
         private var isInvisible = false
 
@@ -54,7 +54,7 @@ class Asuka : ListenerAdapter() {
         @JvmStatic fun main(args: Array<String>) {
             for(arg in args){
                 when(arg){
-                    "--sigma" -> isSigma = true
+                    "--debug" -> isDebug = true
                     "--no-events" -> isNoEvents = true
                     "--invisible" -> isInvisible = true
                 }
@@ -105,7 +105,7 @@ class Asuka : ListenerAdapter() {
             motd = iniConfigFile.get("configuration", "motd")
 
             ALogger.system("Configuration loaded !")
-            if(isSigma) ALogger.warning("Sigma (debug) mode activated. Only debug content will work. Use it at your own risk.")
+            if(isDebug) ALogger.warning("Debug mode activated. Only debug content will work. Use it at your own risk.")
         }
 
         private fun loadModules(){
